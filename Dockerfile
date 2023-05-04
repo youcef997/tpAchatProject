@@ -6,7 +6,6 @@ RUN mvn clean package -Dmaven.test.skip=true
 
 # Stage 2: Run the app with JRE
 FROM openjdk:11-jre-slim
-COPY --from:builder= /app/target/tpAchatProject-1.0.jar /app/
+COPY --from=builder /app/target/tpAchatProject-1.0.jar /app/
 WORKDIR /app
 CMD ["java", "-jar", "tpAchatProject-1.0.jar"]
-
