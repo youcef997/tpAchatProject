@@ -1,5 +1,5 @@
 # Stage 1: Build with Maven
-FROM maven:3.6.3-jdk-11 as builder 
+FROM maven:3.6.3-jdk-11 As builder 
 WORKDIR /app
 COPY . .
 RUN mvn clean package -Dmaven.test.skip=true
