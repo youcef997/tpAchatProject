@@ -2,7 +2,7 @@
 FROM maven:3.8.3-jdk-11 AS builder
 WORKDIR /app
 COPY . .
-RUN mvn clean -Dmaven.test.skip=true package
+RUN mvn clean -Dmaven.test.skip=true
 
 # Stage 2: Run the app with JRE
 FROM openjdk:11-jre-slim
